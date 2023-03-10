@@ -28,8 +28,8 @@ export const JournalPages = () => {
     } 
 
      <IconButton
-      disabled={isSaving}
-      onClick={onClickNewNote}
+      disabled={ isSaving }
+      onClick={ onClickNewNote }
       size="large"
       sx={{ 
         color:'white' , 
@@ -39,7 +39,7 @@ export const JournalPages = () => {
         right:50,
         bottom:50
         }}>
-          <AddOutlined sx={{fontSize:30}}></AddOutlined>
+          <AddOutlined sx={{ fontSize:30 }}></AddOutlined>
     </IconButton>
     </JournalLayout>
 

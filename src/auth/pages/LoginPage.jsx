@@ -9,8 +9,8 @@ import { useForm } from '../../hooks/useForm';
 import { startGoogleSignIn,startLoginWithEmailPassword} from '../../store/auth/';
 
 const formData={
-  email:"davidramoncasanova98@gmail.com",
-  password:'123456',
+  email:"",
+  password:'',
   
 }
 
@@ -45,7 +45,7 @@ export const LoginPage = () => {
   return (
 
       <AuthLayout title="Login">
-        <form onSubmit={onSubmit} className="animate__animated animate__fadeIn animate__faster">
+        <form aria-label="submit-form" onSubmit={onSubmit} className="animate__animated animate__fadeIn animate__faster">
             <Grid container>
               <Grid item xs={ 12 } >
                 <TextField 
@@ -62,6 +62,9 @@ export const LoginPage = () => {
               {/* Contraseña */}
               <Grid item xs={ 12 } sx={{ mt:2 }} >
                 <TextField 
+                  inputProps={{
+                    'data-testid': 'password'
+                  }}
                   label="Contraseña"
                   type="password"
                   placeholder='Contraseña'
@@ -89,7 +92,7 @@ export const LoginPage = () => {
                   </Button>
                 </Grid>
                 <Grid item xs={ 12 } sm={ 6 }>
-                  <Button variant="contained" fullWidth  onClick={ onGoogleSignIn }  disabled={ isAuthenticating }>
+                  <Button variant="contained" fullWidth  onClick={ onGoogleSignIn }  disabled={ isAuthenticating } aria-label="google-btn">
                     <Google/>
                     <Typography sx={{ ml: 1 }}>Google</Typography>
                   </Button>
